@@ -28,9 +28,11 @@ dialogues = {"a": "It is a new virus, tramsmitted to humans by bats.",
              'f': "Use alcohol-based hand sanitizer and rub thoroughly after coming in contact with any object which could be contaminated.",
              'g': "For regular updates on Covid-19 from the World Health Organization, Send 'hi' to + 4 1, 7 9 8, 9 3 1, 8 9 2 on WhatsApp.",
              'h': "Symptoms include coughing, sneezing, difficulty breathing, and pneumonia.",
+             'web': "Opening website.",
              'z': "Hope you are well. Goodbye"}
 
-screens = {1: 'bg1'}
+screens = {1: 'bg1',
+           2: 'bg2'}
 
 # Initialises Speech Output
 def speech_init(): 
@@ -79,10 +81,12 @@ while running:
         speech_output(x)
         userinp = input().lower()
         
-    if "precaution" in userinp:
+    if "precaution" or "prevention" in userinp:
         x = dialogues['b']
         speech_output(x)
-        a = "https://www.who.int"
+        a = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
+        x = dialogues['web']
+        speech_output(x)        
         open_website(a)
         userinp = input().lower()
         
@@ -108,6 +112,8 @@ while running:
         x = dialogues['g']
         speech_output(x)
         b = "https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
+        x = dialogues['web']
+        speech_output(x)        
         open_website(b)
         userinp = input().lower()
     
@@ -128,7 +134,6 @@ while running:
 # Covexa will say this after exiting the while loop
 x = dialogues['z']
 speech_output(x)
-x = "Have a good day!"
-speech_output(x)
+
 
 
