@@ -81,7 +81,7 @@ while running:
         speech_output(x)
         userinp = input().lower()
         
-    if "precaution" or "prevention" in userinp:
+    if "prevention" in userinp:
         x = dialogues['b']
         speech_output(x)
         a = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
