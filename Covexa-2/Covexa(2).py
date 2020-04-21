@@ -76,6 +76,9 @@ userinp = input().lower()
 
 # Function that will run Covexa until user exits
 while running:
+    
+    change_screen('bg1')
+    
     if "corona" in userinp:
         x = dialogues['a']
         speech_output(x)
@@ -128,7 +131,6 @@ while running:
         change_screen('bg2')
         x = "I don't know the answer to that question"
         speech_output(x)
-        change_screen('bg1')
         userinp = input().lower()
 
 # Covexa will say this after exiting the while loop
