@@ -27,12 +27,14 @@ dialogues = {"a": "It is a new virus, tramsmitted to humans by bats.",
              'e': "Symptoms of Coronavirus include cough, fever, chills, headache, tiredness, and trouble breathing.",
              'f': "Use alcohol-based hand sanitizer and rub thoroughly after coming in contact with any object which could be contaminated.",
              'g': "For regular updates on Covid-19 from the World Health Organization, Send 'hi' to + 4 1, 7 9 8, 9 3 1, 8 9 2 on WhatsApp.",
-             'h': "Symptoms include coughing, sneezing, difficulty breathing, and pneumonia.",
+             'h': "Use N-95 masks. Surgical mansks and hankercheifs are completely useless and a waste of money.",
              'web': "Opening website.",
              'z': "Hope you are well. Goodbye"}
 
 screens = {1: 'bg1',
-           2: 'bg2'}
+           2: 'bg2',
+           3: 'bg3',
+           4: 'bg4'}
 
 # Initialises Speech Output
 def speech_init(): 
@@ -77,9 +79,8 @@ userinp = input().lower()
 # Function that will run Covexa until user exits
 while running:
     
-    change_screen('bg1')
-    
     if "corona" in userinp:
+        change_screen('bg4')
         x = dialogues['a']
         speech_output(x)
         userinp = input().lower()
@@ -93,8 +94,9 @@ while running:
         open_website(a)
         userinp = input().lower()
         
-    if "symptoms" in userinp:
+    if "mask" in userinp:
         x = dialogues['h']
+        speech_output(x)
     
     if "transmission" in userinp:
         x = dialogues['c']
@@ -107,6 +109,7 @@ while running:
         userinp = input().lower()
         
     if "symptoms" in userinp:
+        change_screen('bg3')
         x = dialogues['e']
         speech_output(x)
         userinp = input().lower()
