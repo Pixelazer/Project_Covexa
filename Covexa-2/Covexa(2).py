@@ -1,6 +1,8 @@
 '''
-Covexa 2.0
+Covexa 2.4
 [beta]
+
+Made by Team Covexa
 '''
 
 import pyttsx3
@@ -54,7 +56,6 @@ def open_website(a):
 def change_screen(image):
     bg = pg.image.load("images/"+ image +".png").convert_alpha()
     screen.blit(bg,(0,0))
-    sleep(1)
     
     
 
@@ -64,10 +65,12 @@ speech_init()
 pg.init()
 
 screen = pg.display.set_mode(size)
-change_screen('bg1')
 pg.display.set_caption('Covexa')
 
 # Startup
+change_screen('bg1')
+sleep(2)
+
 x = "I am covexa, your coronavirus help bot"
 speech_output(x)
 x = "Ask me any questions you have related to Coronavirus."
