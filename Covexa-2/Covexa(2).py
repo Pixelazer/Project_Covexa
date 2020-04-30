@@ -1,5 +1,5 @@
 '''
-Covexa 2.4
+Covexa 2.6
 [beta]
 
 Made by Team Covexa
@@ -30,11 +30,12 @@ dialogues = {"a": "It is a new virus, tramsmitted to humans by bats.",
              'f': "Use alcohol-based hand sanitizer and rub thoroughly after coming in contact with any object which could be contaminated.",
              'g': "For regular updates on Covid-19 from the World Health Organization, Send 'hi' to + 4 1, 7 9 8, 9 3 1, 8 9 2 on WhatsApp.",
              'h': "Use N-95 masks. Surgical mansks and hankercheifs are completely useless and a waste of money.",
+             'i': "Wash your hands with soap",
              'web': "Opening website.",
              'z': "Hope you are well. Goodbye"}
 
 screens = {1: 'bg1',
-           2: 'bg2',
+           2: 'bg2',      
            3: 'bg3',
            4: 'bg4'}
 
@@ -56,6 +57,7 @@ def open_website(a):
 def change_screen(image):
     bg = pg.image.load("images/"+ image +".png").convert_alpha()
     screen.blit(bg,(0,0))
+    
     
     
 
@@ -132,6 +134,7 @@ while running:
         userinp = input().lower()
         
     if "z" in userinp:
+        pg.quit()
         running = False
     else:
         change_screen('bg2')
