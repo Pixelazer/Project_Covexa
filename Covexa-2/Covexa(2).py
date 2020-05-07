@@ -7,6 +7,7 @@ Made by Team Covexa
 
 import pyttsx3
 import webbrowser
+# import pyaudio
 import pygame as pg
 from time import sleep
 
@@ -41,7 +42,7 @@ screens = {1: 'bg1',
 
 # Initialises Speech Output
 def speech_init(): 
-    engine.setProperty('rate', 150)
+    engine.setProperty('rate', 175)
     engine.setProperty('volume' , 2)
     voices = engine.getPropertyvoices = engine.getProperty('voices')  
     engine.setProperty('voice', voices[0].id)
